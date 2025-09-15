@@ -15,11 +15,13 @@ resource "aws_dynamodb_table" "users" {
 
 resource "aws_lambda_function" "get_user" {
   function_name = "get_user"
-  runtime       = "python3.9"
-  handler       = "user_function.lambda_handler"
+  runtime       = "java11"
+  handler       = "com.anrd.aws.lambda.StreamLambdaHandler::handleRequest"
   role          = var.lambda_role_arn
   filename      = "lambda.zip"
+  source_code_hash = filebase64sha256("lambda.zip")
 }
+
 
 resource "aws_api_gateway_rest_api" "api" {
   name = "UserAPI"
