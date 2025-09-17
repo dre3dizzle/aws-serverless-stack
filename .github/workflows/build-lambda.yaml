@@ -1,32 +1,139 @@
-name: Build Java Lambda
+name: Build and Deploy Lambda
 
 on:
   push:
     branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+env:
+  AWS_REGION: us-east-1
+  ENVIRONMENT: dev
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    outputs:
+      lambda-changed: ${{ steps.changes.outputs.lambda }}
+      terraform-changed: ${{ steps.changes.outputs.terraform }}
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
+
+    - name: Check for changes
+      uses: dorny/paths-filter@v2
+      id: changes
+      with:
+        filters: |
+          lambda:
+            - 'lambda/**'
+          terraform:
+            - '*.tf'
+            - '.github/workflows/**'
 
     - name: Set up JDK
-      uses: actions/setup-java@v3
+      if: steps.changes.outputs.lambda == 'true'
+      uses: actions/setup-java@v4
       with:
         java-version: '17'
+        distribution: 'corretto'
+
+    - name: Cache Maven dependencies
+      if: steps.changes.outputs.lambda == 'true'
+      uses: actions/cache@v3
+      with:
+        path: ~/.m2
+        key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
 
     - name: Build with Maven
-      run: mvn -f lambda/pom.xml clean package
+      if: steps.changes.outputs.lambda == 'true'
+      run: mvn -f lambda/pom.xml clean package -DskipTests
+
+    - name: Run tests
+      if: steps.changes.outputs.lambda == 'true'
+      run: mvn -f lambda/pom.xml test
 
     - name: Package Lambda ZIP
+      if: steps.changes.outputs.lambda == 'true'
       run: |
-        mkdir -p build
-        zip -j build/lambda.zip lambda/target/*.jar
+        cd lambda/target
+        zip -r ../../lambda.zip . -x "*.original"
 
-    - name: Upload ZIP artifact
-      uses: actions/upload-artifact@v3
+    - name: Upload Lambda artifact
+      if: steps.changes.outputs.lambda == 'true'
+      uses: actions/upload-artifact@v4
       with:
         name: lambda-package
-        path: build/lambda.zip
+        path: lambda.zip
+        retention-days: 30
+
+  terraform-plan:
+    needs: build
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Download Lambda artifact
+      if: needs.build.outputs.lambda-changed == 'true'
+      uses: actions/download-artifact@v4
+      with:
+        name: lambda-package
+
+    - name: Setup Terraform
+      uses: hashicorp/setup-terraform@v3
+      with:
+        terraform_version: ~1.0
+
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: ${{ env.AWS_REGION }}
+
+    - name: Terraform Init
+      run: terraform init
+
+    - name: Terraform Plan
+      run: terraform plan -var="environment=${{ env.ENVIRONMENT }}"
+
+  deploy:
+    needs: [build]
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    runs-on: ubuntu-latest
+    environment: production
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Download Lambda artifact
+      if: needs.build.outputs.lambda-changed == 'true'
+      uses: actions/download-artifact@v4
+      with:
+        name: lambda-package
+
+    - name: Setup Terraform
+      uses: hashicorp/setup-terraform@v3
+      with:
+        terraform_version: ~1.0
+
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: ${{ env.AWS_REGION }}
+
+    - name: Terraform Init
+      run: terraform init
+
+    - name: Terraform Apply
+      run: terraform apply -auto-approve -var="environment=${{ env.ENVIRONMENT }}"
+
+    - name: Output API URL
+      run: terraform output api_url

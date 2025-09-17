@@ -1,7 +1,11 @@
 variable "aws_region" {
-  default = "us-east-1"
+  description = "AWS region for resources"
+  type        = string
+  default     = "us-east-1"
 }
 
-variable "lambda_role_arn" {
-  description = "IAM role ARN for Lambda execution"
+variable "environment" {
+  description = "Environment name (dev, staging, prod)"
+  type        = string
+  default     = "dev"
 }
