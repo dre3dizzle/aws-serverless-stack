@@ -1,29 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="src" output="target/classes" path="src/main/java">
+	<classpathentry excluding="**" kind="src" output="target/test-classes" path="src/test/resources">
 		<attributes>
+			<attribute name="test" value="true"/>
+			<attribute name="optional" value="true"/>
+			<attribute name="gradle.buildServer" value="true"/>
+			<attribute name="resource" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" output="target/test-classes" path="src/test/java">
+		<attributes>
+			<attribute name="test" value="true"/>
+			<attribute name="gradle.buildServer" value="true"/>
 			<attribute name="optional" value="true"/>
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry excluding="**" kind="src" output="target/classes" path="src/main/resources">
 		<attributes>
-			<attribute name="maven.pomderived" value="true"/>
 			<attribute name="optional" value="true"/>
+			<attribute name="gradle.buildServer" value="true"/>
+			<attribute name="resource" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="src" output="target/test-classes" path="src/test/java">
+	<classpathentry kind="src" output="target/classes" path="src/main/java">
 		<attributes>
+			<attribute name="gradle.buildServer" value="true"/>
 			<attribute name="optional" value="true"/>
 			<attribute name="maven.pomderived" value="true"/>
-			<attribute name="test" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry excluding="**" kind="src" output="target/test-classes" path="src/test/resources">
+	<classpathentry kind="src" output="build/classes/java/test" path="build/generated/sources/annotationProcessor/java/test">
 		<attributes>
-			<attribute name="maven.pomderived" value="true"/>
 			<attribute name="test" value="true"/>
 			<attribute name="optional" value="true"/>
+			<attribute name="gradle.buildServer" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" output="build/classes/java/main" path="build/generated/sources/annotationProcessor/java/main">
+		<attributes>
+			<attribute name="optional" value="true"/>
+			<attribute name="gradle.buildServer" value="true"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8">
@@ -31,9 +50,359 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Developer/.m2/repository/com/fasterxml/jackson/module/jackson-module-afterburner/2.19.1/jackson-module-afterburner-2.19.1.jar" sourcepath="C:/Users/Developer/.m2/repository/com/fasterxml/jackson/module/jackson-module-afterburner/2.19.1/jackson-module-afterburner-2.19.1-sources.jar">
+		<attributes>
+			<attribute name="gradle.buildServer" value="true"/>
+			<attribute name="groupId" value="com.fasterxml.jackson.module"/>
+			<attribute name="artifactId" value="jackson-module-afterburner"/>
+			<attribute name="version" value="2.19.1"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Developer/.gradle/caches/modules-2/files-2.1/io.micrometer/micrometer-commons/1.14.8/51baec7ebe61f1cd38db19b35e57ac248345cc5f/micrometer-commons-1.14.8.jar" sourcepath="C:/Users/Developer/.gradle/caches/modules-2/files-2.1/io.micrometer/micrometer-commons/1.14.8/ceeb237a90dc86dc3beef7f12ca16e965d37a3bf/micrometer-commons-1.14.8-sources.jar">
+		<attributes>
+			<attribute name="gradle.buildServer" value="true"/>
+			<attribute name="groupId" value="io.micrometer"/>
+			<attribute name="artifactId" value="micrometer-commons"/>
+			<attribute name="version" value="1.14.8"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Developer/.m2/repository/com/amazonaws/serverless/aws-serverless-java-container-spring/2.1.4/aws-serverless-java-container-spring-2.1.4.jar" sourcepath="C:/Users/Developer/.m2/repository/com/amazonaws/serverless/aws-serverless-java-container-spring/2.1.4/aws-serverless-java-container-spring-2.1.4-sources.jar">
+		<attributes>
+			<attribute name="gradle.buildServer" value="true"/>
+			<attribute name="groupId" value="com.amazonaws.serverless"/>
+			<attribute name="artifactId" value="aws-serverless-java-container-spring"/>
+			<attribute name="version" value="2.1.4"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Developer/.gradle/caches/modules-2/files-2.1/org.springframework/spring-aop/6.2.8/435fb310d5f464050b91ac3cb1a7f217a471e62e/spring-aop-6.2.8.jar" sourcepath="C:/Users/Developer/.gradle/caches/modules-2/files-2.1/org.springframework/spring-aop/6.2.8/48c3196037b9b37e21a041e08b9bf6485ec8038f/spring-aop-6.2.8-sources.jar">
+		<attributes>
+			<attribute name="gradle.buildServer" value="true"/>
+			<attribute name="groupId" value="org.springframework"/>
+			<attribute name="artifactId" value="spring-aop"/>
+			<attribute name="version" value="6.2.8"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Developer/.gradle/caches/modules-2/files-2.1/org.springframework/spring-jcl/6.2.8/b806d8d270a8eebaca56f6b4dae8f627460b0d4e/spring-jcl-6.2.8.jar" sourcepath="C:/Users/Developer/.gradle/caches/modules-2/files-2.1/org.springframework/spring-jcl/6.2.8/83d824c6f97a26fe5d4cb3b1aae0a0d3021441f6/spring-jcl-6.2.8-sources.jar">
+		<attributes>
+			<attribute name="gradle.buildServer" value="true"/>
+			<attribute name="groupId" value="org.springframework"/>
+			<attribute name="artifactId" value="spring-jcl"/>
+			<attribute name="version" value="6.2.8"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Developer/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.19.1/jackson-core-2.19.1.jar" sourcepath="C:/Users/Developer/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.19.1/jackson-core-2.19.1-sources.jar">
+		<attributes>
+			<attribute name="gradle.buildServer" value="true"/>
+			<attribute name="groupId" value="com.fasterxml.jackson.core"/>
+			<attribute name="artifactId" value="jackson-core"/>
+			<attribute name="version" value="2.19.1"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Developer/.gradle/caches/modules-2/files-2.1/org.springframework/spring-core/6.2.8/2caf1cef93252f5ef2b7f334b8b4d61f3aecad15/spring-core-6.2.8.jar" sourcepath="C:/Users/Developer/.gradle/caches/modules-2/files-2.1/org.springframework/spring-core/6.2.8/7428698e25e731a7357607d5122dc2a4b100252a/spring-core-6.2.8-sources.jar">
+		<attributes>
+			<attribute name="gradle.buildServer" value="true"/>
+			<attribute name="groupId" value="org.springframework"/>
+			<attribute name="artifactId" value="spring-core"/>
+			<attribute name="version" value="6.2.8"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Developer/.m2/repository/jakarta/servlet/jakarta.servlet-api/6.0.0/jakarta.servlet-api-6.0.0.jar" sourcepath="C:/Users/Developer/.m2/repository/jakarta/servlet/jakarta.servlet-api/6.0.0/jakarta.servlet-api-6.0.0-sources.jar">
+		<attributes>
+			<attribute name="gradle.buildServer" value="true"/>
+			<attribute name="groupId" value="jakarta.servlet"/>
+			<attribute name="artifactId" value="jakarta.servlet-api"/>
+			<attribute name="version" value="6.0.0"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Developer/.m2/repository/org/apache/commons/commons-fileupload2-core/2.0.0-M4/commons-fileupload2-core-2.0.0-M4.jar" sourcepath="C:/Users/Developer/.m2/repository/org/apache/commons/commons-fileupload2-core/2.0.0-M4/commons-fileupload2-core-2.0.0-M4-sources.jar">
+		<attributes>
+			<attribute name="gradle.buildServer" value="true"/>
+			<attribute name="groupId" value="org.apache.commons"/>
+			<attribute name="artifactId" value="commons-fileupload2-core"/>
+			<attribute name="version" value="2.0.0-M4"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Developer/.m2/repository/org/apache/commons/commons-fileupload2-jakarta-servlet6/2.0.0-M4/commons-fileupload2-jakarta-servlet6-2.0.0-M4.jar" sourcepath="C:/Users/Developer/.m2/repository/org/apache/commons/commons-fileupload2-jakarta-servlet6/2.0.0-M4/commons-fileupload2-jakarta-servlet6-2.0.0-M4-sources.jar">
+		<attributes>
+			<attribute name="gradle.buildServer" value="true"/>
+			<attribute name="groupId" value="org.apache.commons"/>
+			<attribute name="artifactId" value="commons-fileupload2-jakarta-servlet6"/>
+			<attribute name="version" value="2.0.0-M4"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Developer/.gradle/caches/modules-2/files-2.1/org.springframework/spring-expression/6.2.8/19e6618120fab6a572880675e1c0af676c7aa4ac/spring-expression-6.2.8.jar" sourcepath="C:/Users/Developer/.gradle/caches/modules-2/files-2.1/org.springframework/spring-expression/6.2.8/87cf1f537b1d87ec1387a8f815a3060d0c220329/spring-expression-6.2.8-sources.jar">
+		<attributes>
+			<attribute name="gradle.buildServer" value="true"/>
+			<attribute name="groupId" value="org.springframework"/>
+			<attribute name="artifactId" value="spring-expression"/>
+			<attribute name="version" value="6.2.8"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Developer/.gradle/caches/modules-2/files-2.1/org.springframework/spring-web/6.2.8/7b6a4ffb12639779721bc5adbc7f5ba80db72ff9/spring-web-6.2.8.jar" sourcepath="C:/Users/Developer/.gradle/caches/modules-2/files-2.1/org.springframework/spring-web/6.2.8/a6c7aba5a46bca07610fcec5669370079737af6f/spring-web-6.2.8-sources.jar">
+		<attributes>
+			<attribute name="gradle.buildServer" value="true"/>
+			<attribute name="groupId" value="org.springframework"/>
+			<attribute name="artifactId" value="spring-web"/>
+			<attribute name="version" value="6.2.8"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Developer/.m2/repository/com/amazonaws/serverless/aws-serverless-java-container-core/2.1.4/aws-serverless-java-container-core-2.1.4.jar" sourcepath="C:/Users/Developer/.m2/repository/com/amazonaws/serverless/aws-serverless-java-container-core/2.1.4/aws-serverless-java-container-core-2.1.4-sources.jar">
+		<attributes>
+			<attribute name="gradle.buildServer" value="true"/>
+			<attribute name="groupId" value="com.amazonaws.serverless"/>
+			<attribute name="artifactId" value="aws-serverless-java-container-core"/>
+			<attribute name="version" value="2.1.4"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Developer/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.19.1/jackson-databind-2.19.1.jar" sourcepath="C:/Users/Developer/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.19.1/jackson-databind-2.19.1-sources.jar">
+		<attributes>
+			<attribute name="gradle.buildServer" value="true"/>
+			<attribute name="groupId" value="com.fasterxml.jackson.core"/>
+			<attribute name="artifactId" value="jackson-databind"/>
+			<attribute name="version" value="2.19.1"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Developer/.m2/repository/com/amazonaws/aws-lambda-java-core/1.2.3/aws-lambda-java-core-1.2.3.jar" sourcepath="C:/Users/Developer/.m2/repository/com/amazonaws/aws-lambda-java-core/1.2.3/aws-lambda-java-core-1.2.3-sources.jar">
+		<attributes>
+			<attribute name="gradle.buildServer" value="true"/>
+			<attribute name="groupId" value="com.amazonaws"/>
+			<attribute name="artifactId" value="aws-lambda-java-core"/>
+			<attribute name="version" value="1.2.3"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Developer/.gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-core/2.24.3/7f6a261243ca767c7f38fd4b542bcde626c8894e/log4j-core-2.24.3.jar" sourcepath="C:/Users/Developer/.gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-core/2.24.3/831c75203e0b74ab296fd320fd99afe18a1629a1/log4j-core-2.24.3-sources.jar">
+		<attributes>
+			<attribute name="gradle.buildServer" value="true"/>
+			<attribute name="groupId" value="org.apache.logging.log4j"/>
+			<attribute name="artifactId" value="log4j-core"/>
+			<attribute name="version" value="2.24.3"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Developer/.m2/repository/jakarta/ws/rs/jakarta.ws.rs-api/3.1.0/jakarta.ws.rs-api-3.1.0.jar" sourcepath="C:/Users/Developer/.m2/repository/jakarta/ws/rs/jakarta.ws.rs-api/3.1.0/jakarta.ws.rs-api-3.1.0-sources.jar">
+		<attributes>
+			<attribute name="gradle.buildServer" value="true"/>
+			<attribute name="groupId" value="jakarta.ws.rs"/>
+			<attribute name="artifactId" value="jakarta.ws.rs-api"/>
+			<attribute name="version" value="3.1.0"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Developer/.m2/repository/com/amazonaws/aws-lambda-java-log4j2/1.6.0/aws-lambda-java-log4j2-1.6.0.jar" sourcepath="C:/Users/Developer/.m2/repository/com/amazonaws/aws-lambda-java-log4j2/1.6.0/aws-lambda-java-log4j2-1.6.0-sources.jar">
+		<attributes>
+			<attribute name="gradle.buildServer" value="true"/>
+			<attribute name="groupId" value="com.amazonaws"/>
+			<attribute name="artifactId" value="aws-lambda-java-log4j2"/>
+			<attribute name="version" value="1.6.0"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Developer/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.19.1/jackson-annotations-2.19.1.jar" sourcepath="C:/Users/Developer/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.19.1/jackson-annotations-2.19.1-sources.jar">
+		<attributes>
+			<attribute name="gradle.buildServer" value="true"/>
+			<attribute name="groupId" value="com.fasterxml.jackson.core"/>
+			<attribute name="artifactId" value="jackson-annotations"/>
+			<attribute name="version" value="2.19.1"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Developer/.gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-slf4j-impl/2.24.3/182894dfec8b730639c9ea065f1084ba85fcbaa3/log4j-slf4j-impl-2.24.3.jar" sourcepath="C:/Users/Developer/.gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-slf4j-impl/2.24.3/451669a673b5e6edf7a718dec1656b70bc2a20ef/log4j-slf4j-impl-2.24.3-sources.jar">
+		<attributes>
+			<attribute name="gradle.buildServer" value="true"/>
+			<attribute name="groupId" value="org.apache.logging.log4j"/>
+			<attribute name="artifactId" value="log4j-slf4j-impl"/>
+			<attribute name="version" value="2.24.3"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Developer/.gradle/caches/modules-2/files-2.1/org.springframework/spring-webmvc/6.2.8/a98cbaba4b55b4fee2d752041130e2e0f7014b27/spring-webmvc-6.2.8.jar" sourcepath="C:/Users/Developer/.gradle/caches/modules-2/files-2.1/org.springframework/spring-webmvc/6.2.8/7f2136dec83b19774a2934603f4ddf999ffd928e/spring-webmvc-6.2.8-sources.jar">
+		<attributes>
+			<attribute name="gradle.buildServer" value="true"/>
+			<attribute name="groupId" value="org.springframework"/>
+			<attribute name="artifactId" value="spring-webmvc"/>
+			<attribute name="version" value="6.2.8"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Developer/.gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-api/2.24.3/b02c125db8b6d295adf72ae6e71af5d83bce2370/log4j-api-2.24.3.jar" sourcepath="C:/Users/Developer/.gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-api/2.24.3/a9741c71e05aab4f5624a1cb3c1cec6d833b8701/log4j-api-2.24.3-sources.jar">
+		<attributes>
+			<attribute name="gradle.buildServer" value="true"/>
+			<attribute name="groupId" value="org.apache.logging.log4j"/>
+			<attribute name="artifactId" value="log4j-api"/>
+			<attribute name="version" value="2.24.3"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Developer/.m2/repository/commons-io/commons-io/2.19.0/commons-io-2.19.0.jar" sourcepath="C:/Users/Developer/.m2/repository/commons-io/commons-io/2.19.0/commons-io-2.19.0-sources.jar">
+		<attributes>
+			<attribute name="gradle.buildServer" value="true"/>
+			<attribute name="groupId" value="commons-io"/>
+			<attribute name="artifactId" value="commons-io"/>
+			<attribute name="version" value="2.19.0"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Developer/.m2/repository/org/slf4j/slf4j-api/2.0.17/slf4j-api-2.0.17.jar" sourcepath="C:/Users/Developer/.m2/repository/org/slf4j/slf4j-api/2.0.17/slf4j-api-2.0.17-sources.jar">
+		<attributes>
+			<attribute name="gradle.buildServer" value="true"/>
+			<attribute name="groupId" value="org.slf4j"/>
+			<attribute name="artifactId" value="slf4j-api"/>
+			<attribute name="version" value="2.0.17"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Developer/.gradle/caches/modules-2/files-2.1/org.springframework/spring-context/6.2.8/9db99fe5f92f587e8f2b26b34a7f42260169925a/spring-context-6.2.8.jar" sourcepath="C:/Users/Developer/.gradle/caches/modules-2/files-2.1/org.springframework/spring-context/6.2.8/37dce31749b54dbaaf79967fec3853fef066bfb/spring-context-6.2.8-sources.jar">
+		<attributes>
+			<attribute name="gradle.buildServer" value="true"/>
+			<attribute name="groupId" value="org.springframework"/>
+			<attribute name="artifactId" value="spring-context"/>
+			<attribute name="version" value="6.2.8"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Developer/.gradle/caches/modules-2/files-2.1/org.springframework/spring-beans/6.2.8/9da1e690f343c30b6ed6eabd5f60ecc5dd0b225a/spring-beans-6.2.8.jar" sourcepath="C:/Users/Developer/.gradle/caches/modules-2/files-2.1/org.springframework/spring-beans/6.2.8/9fcc06c00b50faccfc1bf7d7e8a15bd2418a4da5/spring-beans-6.2.8-sources.jar">
+		<attributes>
+			<attribute name="gradle.buildServer" value="true"/>
+			<attribute name="groupId" value="org.springframework"/>
+			<attribute name="artifactId" value="spring-beans"/>
+			<attribute name="version" value="6.2.8"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Developer/.gradle/caches/modules-2/files-2.1/io.micrometer/micrometer-observation/1.14.8/335a6843ef73700d60873bc233d21679f46a7db4/micrometer-observation-1.14.8.jar" sourcepath="C:/Users/Developer/.gradle/caches/modules-2/files-2.1/io.micrometer/micrometer-observation/1.14.8/d0602caffc8744f3bbdb48a712d9e264c59213ea/micrometer-observation-1.14.8-sources.jar">
+		<attributes>
+			<attribute name="gradle.buildServer" value="true"/>
+			<attribute name="groupId" value="io.micrometer"/>
+			<attribute name="artifactId" value="micrometer-observation"/>
+			<attribute name="version" value="1.14.8"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Developer/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents.client5/httpclient5/5.5/4b3d253351cf74eb0ae8eb21ca5a5fb9815ef861/httpclient5-5.5.jar" sourcepath="C:/Users/Developer/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents.client5/httpclient5/5.5/a8cb297ef292cd6c3eded0ce4126b4ed0862517/httpclient5-5.5-sources.jar">
+		<attributes>
+			<attribute name="test" value="true"/>
+			<attribute name="gradle.buildServer" value="true"/>
+			<attribute name="groupId" value="org.apache.httpcomponents.client5"/>
+			<attribute name="artifactId" value="httpclient5"/>
+			<attribute name="version" value="5.5"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Developer/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar" sourcepath="C:/Users/Developer/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2-sources.jar">
+		<attributes>
+			<attribute name="test" value="true"/>
+			<attribute name="gradle.buildServer" value="true"/>
+			<attribute name="groupId" value="org.apiguardian"/>
+			<attribute name="artifactId" value="apiguardian-api"/>
+			<attribute name="version" value="1.1.2"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Developer/.gradle/caches/modules-2/files-2.1/org.junit.jupiter/junit-jupiter-engine/5.13.1/f9b875488495c154f813c92ce4f67095a14c7ca1/junit-jupiter-engine-5.13.1.jar" sourcepath="C:/Users/Developer/.gradle/caches/modules-2/files-2.1/org.junit.jupiter/junit-jupiter-engine/5.13.1/323371f1fc186ec35c34ebcec4a84c4c9f919372/junit-jupiter-engine-5.13.1-sources.jar">
+		<attributes>
+			<attribute name="test" value="true"/>
+			<attribute name="gradle.buildServer" value="true"/>
+			<attribute name="groupId" value="org.junit.jupiter"/>
+			<attribute name="artifactId" value="junit-jupiter-engine"/>
+			<attribute name="version" value="5.13.1"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Developer/.gradle/caches/modules-2/files-2.1/org.junit.jupiter/junit-jupiter-api/5.13.1/33ee7e4a267950257dc7da8946af0db3f73e36f4/junit-jupiter-api-5.13.1.jar" sourcepath="C:/Users/Developer/.gradle/caches/modules-2/files-2.1/org.junit.jupiter/junit-jupiter-api/5.13.1/4e215d1966d76d0fb5a59365e8a7c53be50efa02/junit-jupiter-api-5.13.1-sources.jar">
+		<attributes>
+			<attribute name="test" value="true"/>
+			<attribute name="gradle.buildServer" value="true"/>
+			<attribute name="groupId" value="org.junit.jupiter"/>
+			<attribute name="artifactId" value="junit-jupiter-api"/>
+			<attribute name="version" value="5.13.1"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Developer/.gradle/caches/modules-2/files-2.1/org.junit.platform/junit-platform-commons/1.13.1/44a365b1bd727696717c01a2a44b8705fd52935e/junit-platform-commons-1.13.1.jar" sourcepath="C:/Users/Developer/.gradle/caches/modules-2/files-2.1/org.junit.platform/junit-platform-commons/1.13.1/e28be0087ad9870a61b3bc4d890143ba9196d932/junit-platform-commons-1.13.1-sources.jar">
+		<attributes>
+			<attribute name="test" value="true"/>
+			<attribute name="gradle.buildServer" value="true"/>
+			<attribute name="groupId" value="org.junit.platform"/>
+			<attribute name="artifactId" value="junit-platform-commons"/>
+			<attribute name="version" value="1.13.1"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Developer/.gradle/caches/modules-2/files-2.1/org.junit.jupiter/junit-jupiter-params/5.13.1/190caf10c51c9c22fe835fa9961c80b386a801f6/junit-jupiter-params-5.13.1.jar" sourcepath="C:/Users/Developer/.gradle/caches/modules-2/files-2.1/org.junit.jupiter/junit-jupiter-params/5.13.1/ce282511f8b949bbb75939e0361662f0636a0867/junit-jupiter-params-5.13.1-sources.jar">
+		<attributes>
+			<attribute name="test" value="true"/>
+			<attribute name="gradle.buildServer" value="true"/>
+			<attribute name="groupId" value="org.junit.jupiter"/>
+			<attribute name="artifactId" value="junit-jupiter-params"/>
+			<attribute name="version" value="5.13.1"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Developer/.m2/repository/org/apache/httpcomponents/core5/httpcore5/5.3.4/httpcore5-5.3.4.jar" sourcepath="C:/Users/Developer/.m2/repository/org/apache/httpcomponents/core5/httpcore5/5.3.4/httpcore5-5.3.4-sources.jar">
+		<attributes>
+			<attribute name="test" value="true"/>
+			<attribute name="gradle.buildServer" value="true"/>
+			<attribute name="groupId" value="org.apache.httpcomponents.core5"/>
+			<attribute name="artifactId" value="httpcore5"/>
+			<attribute name="version" value="5.3.4"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Developer/.m2/repository/com/amazonaws/serverless/aws-serverless-java-container-core/2.1.4/aws-serverless-java-container-core-2.1.4-tests.jar" sourcepath="C:/Users/Developer/.m2/repository/com/amazonaws/serverless/aws-serverless-java-container-core/2.1.4/aws-serverless-java-container-core-2.1.4-sources.jar">
+		<attributes>
+			<attribute name="test" value="true"/>
+			<attribute name="gradle.buildServer" value="true"/>
+			<attribute name="groupId" value="com.amazonaws.serverless"/>
+			<attribute name="artifactId" value="aws-serverless-java-container-core"/>
+			<attribute name="version" value="2.1.4"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Developer/.gradle/caches/modules-2/files-2.1/org.junit.jupiter/junit-jupiter/5.13.1/e161de3741e97249c17c1a1e0173196e126ff873/junit-jupiter-5.13.1.jar" sourcepath="C:/Users/Developer/.gradle/caches/modules-2/files-2.1/org.junit.jupiter/junit-jupiter/5.13.1/9c1abe3ede704e951fa5329365daa7a4cb444ed5/junit-jupiter-5.13.1-sources.jar">
+		<attributes>
+			<attribute name="test" value="true"/>
+			<attribute name="gradle.buildServer" value="true"/>
+			<attribute name="groupId" value="org.junit.jupiter"/>
+			<attribute name="artifactId" value="junit-jupiter"/>
+			<attribute name="version" value="5.13.1"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Developer/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar" sourcepath="C:/Users/Developer/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0-sources.jar">
+		<attributes>
+			<attribute name="test" value="true"/>
+			<attribute name="gradle.buildServer" value="true"/>
+			<attribute name="groupId" value="org.opentest4j"/>
+			<attribute name="artifactId" value="opentest4j"/>
+			<attribute name="version" value="1.3.0"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Developer/.m2/repository/org/apache/httpcomponents/core5/httpcore5-h2/5.3.4/httpcore5-h2-5.3.4.jar" sourcepath="C:/Users/Developer/.m2/repository/org/apache/httpcomponents/core5/httpcore5-h2/5.3.4/httpcore5-h2-5.3.4-sources.jar">
+		<attributes>
+			<attribute name="test" value="true"/>
+			<attribute name="gradle.buildServer" value="true"/>
+			<attribute name="groupId" value="org.apache.httpcomponents.core5"/>
+			<attribute name="artifactId" value="httpcore5-h2"/>
+			<attribute name="version" value="5.3.4"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Developer/.gradle/caches/modules-2/files-2.1/org.junit.platform/junit-platform-launcher/1.13.1/e633dd5147a2cb4e15925387958cd0610cbc4057/junit-platform-launcher-1.13.1.jar" sourcepath="C:/Users/Developer/.gradle/caches/modules-2/files-2.1/org.junit.platform/junit-platform-launcher/1.13.1/38768c2accda4a142a41edef00b79afddd7c5682/junit-platform-launcher-1.13.1-sources.jar">
+		<attributes>
+			<attribute name="test" value="true"/>
+			<attribute name="gradle.buildServer" value="true"/>
+			<attribute name="groupId" value="org.junit.platform"/>
+			<attribute name="artifactId" value="junit-platform-launcher"/>
+			<attribute name="version" value="1.13.1"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Developer/.gradle/caches/modules-2/files-2.1/org.junit.platform/junit-platform-engine/1.13.1/15a28065d991d076ae59f2406e7b8a4a9db655b7/junit-platform-engine-1.13.1.jar" sourcepath="C:/Users/Developer/.gradle/caches/modules-2/files-2.1/org.junit.platform/junit-platform-engine/1.13.1/3966bac23073c327b364a95f427bce08752f1df1/junit-platform-engine-1.13.1-sources.jar">
+		<attributes>
+			<attribute name="test" value="true"/>
+			<attribute name="gradle.buildServer" value="true"/>
+			<attribute name="groupId" value="org.junit.platform"/>
+			<attribute name="artifactId" value="junit-platform-engine"/>
+			<attribute name="version" value="1.13.1"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" path="target/generated-sources/annotations">
+		<attributes>
+			<attribute name="optional" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="ignore_optional_problems" value="true"/>
+			<attribute name="m2e-apt" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" output="target/test-classes" path="target/generated-test-sources/test-annotations">
+		<attributes>
+			<attribute name="optional" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="ignore_optional_problems" value="true"/>
+			<attribute name="m2e-apt" value="true"/>
+			<attribute name="test" value="true"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="output" path="target/classes"/>
