@@ -57,8 +57,7 @@ jobs:
     - name: Package Lambda ZIP
       if: steps.changes.outputs.lambda == 'true'
       run: |
-        cd lambda/target
-        zip -r ../../lambda.zip . -x "*.original"
+        cp lambda/target/lambda-*-SNAPSHOT.jar lambda.zip
 
     - name: Upload Lambda artifact
       if: steps.changes.outputs.lambda == 'true'
